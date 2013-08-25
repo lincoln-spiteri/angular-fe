@@ -7,14 +7,14 @@ angular.module("fe.resetDisable", []).directive('resetDisable', function () {
         restrict: 'A',
         scope: {
         	model: '=ngModel',
-        	mioResetDisable: '@'
+        	resetDisable: '@'
         },
         link: function (scope, element, attrs) {
 
-            scope.$watch('mioResetDisable', function (newValue, oldValue) {
+            scope.$watch('resetDisable', function (newValue, oldValue) {
                 
             	if (newValue === "false") {
-            		scope.model = false;
+            		scope.model = false; // TODO: reset based on element type.
             		element.attr("disabled", true);
             	}
             	else {
