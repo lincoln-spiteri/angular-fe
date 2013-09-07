@@ -1,4 +1,26 @@
-angular.module("feDnd", []).directive("feDraggable", ["feDndService", function (dndService) {
+/**
+ * Angular Drag and drop directives feDraggbale/feDroppable. Allows for arbitrary object to be dragged and dropped.
+ * 
+ * feDraggable is bound to a model object.
+ * feDropable is bound to an object that implements the following interface that is provided by a model:
+ * 
+ * 	$scope.dnd = {
+ *			dragenter: function (data) {
+ *				$log.info("Received drag enter");
+ *			},
+ *			dragover: function (data) {
+ *				$log.info("Received drag over");
+ *			},
+ *			dragleave: function (data) {
+ *				$log.info("Received drag leave");
+ *			},
+ *			drop: function (data) {
+ *				$log.info("Received data drop");
+ *			}
+ *	};
+ */
+
+angular.module("fe.dnd", []).directive("feDraggable", ["feDndService", function (dndService) {
     
 	return {
         restrict: "A",
@@ -65,7 +87,6 @@ angular.module("feDnd", []).directive("feDraggable", ["feDndService", function (
 	/**
 	 * Drag and drop helper service
 	 */
-	
 	var dndData;
 	
 	return {

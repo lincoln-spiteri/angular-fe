@@ -1,6 +1,6 @@
 /* Reset and disable a form element based on the eveluation of an expression */
 
-angular.module("fe.resetDisable", []).directive('resetDisable', function () {
+angular.module("fe.resetDisable", []).directive('feResetDisable', function () {
     
 	return {
     	//require: 'ngModel',
